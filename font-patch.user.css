@@ -1,0 +1,29 @@
+/* ==UserStyle==
+@name         Font Patches
+@namespace    userstyles.xnu.kr/font-patches
+@description  Some fonts suck
+@author       Xnuk Shuman
+@version      2024.01.21
+@preprocessor default
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+@font-face {
+	font-family: -apple-system;
+	src: local('SF Pro');
+}
+
+@-moz-document url-prefix("https://www.typescriptlang.org/play")
+{
+	@font-face {
+		font-family: 'monospace';
+		src: local('');
+	}
+}
+
+@-moz-document domain("console.aws.amazon.com") {
+	/* Used by CloudFront */
+	.ace_editor {
+		font-family: monospace !important;
+	}
+}

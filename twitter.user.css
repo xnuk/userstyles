@@ -1,0 +1,76 @@
+/* ==UserStyle==
+@name         Twitter
+@namespace    userstyles.xnu.kr/twitter
+@description  Custom fix for twitter
+@author       Xnuk Shuman
+@version      2024.01.21
+@preprocessor default
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+@-moz-document url-prefix("https://twitter.com")
+{
+	div[data-testid='primaryColumn'],
+	div[data-testid='primaryColumn'] > div:only-child > div:last-child,
+	.r-1ye8kvj:only-child {
+		max-width: none !important;
+	}
+
+	div[data-testid='sidebarColumn'] {
+		display: none;
+	}
+
+	section
+		> div[aria-label='Timeline: Your Home Timeline']
+		> div:only-child
+		> div:only-child
+		> div
+		> div:only-child
+		div[data-testid='tweet']
+		> div:last-child
+		> div:nth-last-child(2)
+		> div:only-child
+		> div:only-child {
+		max-height: 400px;
+		/* max-width: 500px; */
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#layers > div {
+		height: 0;
+		top: 0;
+	}
+
+	div[data-testid='DMDrawer'] {
+		display: none;
+	}
+
+	.r-16kd837 {
+		background-color: transparent;
+	}
+
+	a[href='/i/verified-choose'] {
+		display: none;
+	}
+
+	div[data-testid='card.layoutLarge\.media'] > a[aria-label] {
+		&::after {
+			content: attr(aria-label);
+			display: block;
+			position: absolute;
+			inset: auto 0 0 0;
+			padding: 8px 16px;
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+			backdrop-filter: blur(10px);
+			word-break: keep-all;
+		}
+
+		&:hover,
+		&:focus {
+			opacity: 0.7;
+		}
+	}
+}
