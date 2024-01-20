@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name         solved.ac tier level
+@namespace    userstyles.xnu.kr/acmicpc-solvedac
+@description  Tier level indicator for acmicpc.net
+@author       Xnuk Shuman
+@version      2024.01.21
+@preprocessor stylus
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+@-moz-document domain("www.acmicpc.net") {
+	$prefix = 'solvedac-tier-name'
+	$size = 12
+	$gap = 4
+	$svg = '
+		<svg viewBox="0 0 95 2" xmlns="http://www.w3.org/2000/svg">
+			<defs>
+				<path id="d" d="
+					m0 2 2 0 1-2-2 0z
+					m3 0 2 0 1-2-2 0z
+					m3 0 2 0 1-2-2 0z
+					m3 0 2 0 1-2-2 0z
+					m3 0 2 0 1-2-2 0z
+				" stroke="none"/>
+			</defs>
+			<use href="#d" x="' + (16 * 0) + '" y="0" fill="#ad5600"/>
+			<use href="#d" x="' + (16 * 1) + '" y="0" fill="#435f7a"/>
+			<use href="#d" x="' + (16 * 2) + '" y="0" fill="#ec9a00"/>
+			<use href="#d" x="' + (16 * 3) + '" y="0" fill="#27e2a4"/>
+			<use href="#d" x="' + (16 * 4) + '" y="0" fill="#00b4fc"/>
+			<use href="#d" x="' + (16 * 5) + '" y="0" fill="#ff0062"/>
+		</svg>
+	'
+
+	$svg_url = url('data:image/svg+xml,' + \
+		replace('#', '%23', \
+		replace('"', '%22', \
+		replace('\s*\n\s*', '', $svg))))
+
+	span[class^={$prefix}-]:not(.{$prefix}-0):not(.{$prefix}--1)
+		&:after
+			color: currentColor
+			font-size: .9em
+		&:before
+			background-image: $svg_url
+			background-repeat: no-repeat
+			background-size: 380px 8px
+
+			content: ''
+			display: inline-block
+			height: 8px
+			margin: 0 8px
+			vertical-align: middle
+
+	for $num in 1..30
+		.{$prefix}-{$num}
+			&:before
+				width: unit($size * $num + $gap * floor(($num - 1) / 5), px)
+			&:after
+				content: '' + $num
+}

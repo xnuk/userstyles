@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name         Pinafore
+@namespace    userstyles.xnu.kr/pinafore
+@description  Custom fix for Pinafore
+@author       Xnuk Shuman
+@version      2024.01.21
+@preprocessor default
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+@-moz-document domain("pinafore.social"), domain("semaphore.social") {
+	body,
+	input,
+	textarea {
+		font-family: 'Inconsolata Nerd Font Mono', 'Noto Sans CJK KR', monospace;
+		font-size: 12px;
+		line-height: 1.2;
+	}
+
+	main {
+		width: auto;
+		max-width: 1100px;
+	}
+
+	.more-items-header > button.primary {
+		flex-grow: 1;
+	}
+
+	.status-media {
+		width: 50%;
+		padding-left: 25%;
+	}
+
+	#page-list-item-\/federated {
+		display: none;
+	}
+}
