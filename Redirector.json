@@ -1,0 +1,236 @@
+{
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2024-01-29T16:01:11.354Z",
+    "redirects": [
+        {
+            "description": "Fast youtube",
+            "exampleUrl": "https://youtu.be/M_bnNdhzj9E?t=1m10s",
+            "exampleResult": "https://www.youtube.com/watch?v=M_bnNdhzj9E&t=1m10s",
+            "error": null,
+            "includePattern": "https://youtu.be/([^?]*)(?:\\?(.*))?",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.youtube.com/watch?v=$1&$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Google Fuck",
+            "exampleUrl": "https://www.google.com/url?q=https://xnu.kr/phpMyAdmin",
+            "exampleResult": "https://xnu.kr/phpMyAdmin",
+            "error": null,
+            "includePattern": "https://www.google.com/url?q=*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "W",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Thx Mozilla",
+            "exampleUrl": "https://developer.mozilla.org/ko/docs/Web/API/Web_Audio_API",
+            "exampleResult": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
+            "error": null,
+            "includePattern": "https://developer.mozilla.org/ko/docs/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://developer.mozilla.org/en-US/docs/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Wolframalpha Sucks",
+            "exampleUrl": "http://wolframalpha.com",
+            "exampleResult": "https://www.wolframalpha.com/",
+            "error": null,
+            "includePattern": "^https?://wolframalpha.com/?(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.wolframalpha.com/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "GithubWhitespace2",
+            "exampleUrl": "https://github.com/superseriousbusiness/gotosocial/pull/2572/commits/57692e945f96b15d82aee0f5b4c9633866817b1d?diff=split&w=1",
+            "exampleResult": "https://github.com/superseriousbusiness/gotosocial/pull/2572/commits/57692e945f96b15d82aee0f5b4c9633866817b1d?w=1&diff=split&",
+            "error": null,
+            "includePattern": "https://github.com/([^/]+/[^/]+)/(pull/[0-9]+/(?:commits/[0-9a-f]+|files)/?|commit/[0-9a-f]+/?)(?:\\?(?:w=1&)*((?:[^&]+&)+)(?:w=1&)*(?:w=1)?([^&]*).*)?$",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://github.com/$1/$2?w=1&$3$4",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "cargo",
+            "exampleUrl": "https://cargo.rs/",
+            "exampleResult": "https://crates.io/",
+            "error": null,
+            "includePattern": "https://cargo.rs*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://crates.io$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "noj.am",
+            "exampleUrl": "https://noj.am/2164",
+            "exampleResult": "https://www.acmicpc.net/problem/2164",
+            "error": null,
+            "includePattern": "https://noj.am/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.acmicpc.net/problem/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "hada.io",
+            "exampleUrl": "https://news.hada.io/topic?id=4195&utm_source=twitter",
+            "exampleResult": "https://news-hada.xnuk.workers.dev/4195",
+            "error": null,
+            "includePattern": "^https://news.hada.io/topic\\?id=([0-9]+).*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://news-hada.xnuk.workers.dev/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "ffxiv",
+            "exampleUrl": "https://ff14.co.kr/community/forum",
+            "exampleResult": "https://www.ff14.co.kr/community/forum",
+            "error": null,
+            "includePattern": "https://ff14.co.kr/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.ff14.co.kr/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "ssb redirect",
+            "exampleUrl": "https://xnuk.slack.com/ssb/redirect",
+            "exampleResult": "https://xnuk.slack.com/",
+            "error": null,
+            "includePattern": "https://*.slack.com/ssb/redirect",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://$1.slack.com/",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Ruby 2 -> 3",
+            "exampleUrl": "https://ruby-doc.org/core-2.7.0/Array.html",
+            "exampleResult": "https://ruby-doc.org/core/Array.html",
+            "error": null,
+            "includePattern": "https://ruby-doc\\.org/(\\w+)-2\\.[0-9\\.]+/(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://ruby-doc.org/$1/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "No YouTube Shorts",
+            "exampleUrl": "https://www.youtube.com/shorts/wdOsDv-nEi8",
+            "exampleResult": "https://www.youtube.com/watch?v=wdOsDv-nEi8",
+            "error": null,
+            "includePattern": "https://www.youtube.com/shorts/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.youtube.com/watch?v=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "ffxiv mixed content",
+            "exampleUrl": "http://image.ff14.co.kr/Patchnote/600/A5A3849CFC386EEADE551BEE6BFB89475BF295F3B6BA29B9748D54628AF18EC2.jpg",
+            "exampleResult": "https://image.ff14.co.kr/Patchnote/600/A5A3849CFC386EEADE551BEE6BFB89475BF295F3B6BA29B9748D54628AF18EC2.jpg",
+            "error": null,
+            "includePattern": "http://([^/]+).ff14.co.kr/(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://$1.ff14.co.kr/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "imageset",
+                "object",
+                "xmlhttprequest",
+                "history",
+                "other"
+            ]
+        }
+    ]
+}
