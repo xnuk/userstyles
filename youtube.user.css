@@ -167,4 +167,8 @@
 	html:fullscreen ytd-watch-flexy[theater] #columns#columns {
 		top: 100vh;
 	}
+
+	ytd-search.ytd-page-manager[role='main'] {
+		margin-top: 60px;
+	}
 }
