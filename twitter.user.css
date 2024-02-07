@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/twitter
 @description  Custom fix for twitter
 @author       Xnuk Shuman
-@version      2024.01.21
+@version      2024.02.07
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -18,24 +18,6 @@
 
 	div[data-testid='sidebarColumn'] {
 		display: none;
-	}
-
-	section
-		> div[aria-label='Timeline: Your Home Timeline']
-		> div:only-child
-		> div:only-child
-		> div
-		> div:only-child
-		div[data-testid='tweet']
-		> div:last-child
-		> div:nth-last-child(2)
-		> div:only-child
-		> div:only-child {
-		max-height: 400px;
-		/* max-width: 500px; */
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 
 	#layers > div {
@@ -72,5 +54,9 @@
 		&:focus {
 			opacity: 0.7;
 		}
+	}
+
+	div:has(> a[href$='/analytics'][aria-label][role='link']) {
+		display: none;
 	}
 }
