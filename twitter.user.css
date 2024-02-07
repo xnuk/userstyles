@@ -29,10 +29,6 @@
 		display: none;
 	}
 
-	.r-16kd837 {
-		background-color: transparent;
-	}
-
 	a[href='/i/verified-choose'] {
 		display: none;
 	}
@@ -56,7 +52,19 @@
 		}
 	}
 
-	div:has(> a[href$='/analytics'][aria-label][role='link']) {
+	/* hide the view analytics icon */
+	div:has(> a[href$='/analytics'][aria-label][role='link']),
+	div:has(
+			> div:is(
+					[aria-label*='애널리틱스'],
+					[aria-label*='Analytics' i]
+				)[role='button']
+		) {
 		display: none;
+	}
+
+	/* make a space between bookmark and share icon */
+	div:has(> div[data-testid='bookmark']) {
+		flex: 1 1 0;
 	}
 }
