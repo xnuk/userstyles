@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/youtube
 @description  Custom theme to use YouTube anonymously
 @author       Xnuk Shuman
-@version      2024.03.01
+@version      2024.03.02
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -158,7 +158,6 @@
 		max-width: none;
 		position: absolute;
 		top: max(480px, min(calc((9 / 16) * 100vw), calc(100vh - 60px)));
-		backdrop-filter: blur(4px);
 	}
 
 	html:fullscreen ytd-watch-flexy[theater] #columns#columns {
