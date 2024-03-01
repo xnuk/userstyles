@@ -33,6 +33,10 @@
 		display: none;
 	}
 
+	div:has(> a[href$="/analytics"][aria-label]) {
+		display: none;
+	}
+
 	div[data-testid='card.layoutLarge\.media'] > a[aria-label] {
 		&::after {
 			content: attr(aria-label);
