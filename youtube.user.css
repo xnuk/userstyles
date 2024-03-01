@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/youtube
 @description  Custom theme to use YouTube anonymously
 @author       Xnuk Shuman
-@version      2024.01.21
+@version      2024.03.01
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -60,10 +60,7 @@
 			border: 1px transparent;
 		}
 		& #center {
-			transition: flex-basis 0.2s;
-			&:focus-within {
-				flex-basis: 1200px;
-			}
+			flex-basis: 1200px;
 		}
 	}
 
