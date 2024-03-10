@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name         I Hate PASS
+@namespace    userstyles.xnu.kr/i-hate-pass
+@description  PASS 휴대폰 인증 버튼 제거
+@author       Xnuk Shuman
+@version      2024.03.11
+@preprocessor default
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+@-moz-document url-prefix("https://nice.checkplus.co.kr/cert/") {
+	button#btnPass#btnPass,
+	.onPassBtn,
+	a#goPass#goPass,
+	.footerBanner,
+	a#bannerLink {
+		display: none !important;
+	}
+
+	button#btnPass.on + button#btnSms {
+		background-color: #ff3a4a;
+		border-color: transparent;
+		color: #fff;
+	}
+}
+
+@-moz-document domain("cert.mobile-ok.com") {
+	button#start {
+		display: none !important;
+	}
+
+	button#start.on + button#smsstart {
+		background-color: #ff3a4a;
+		border-color: transparent;
+		color: #fff;
+	}
+}
