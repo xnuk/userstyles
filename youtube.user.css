@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/youtube
 @description  Custom theme to use YouTube anonymously
 @author       Xnuk Shuman
-@version      2024.03.20
+@version      2024.03.21
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -110,24 +110,24 @@
 		display: none !important;
 	}
 
-	ytd-watch-grid[theater] #primary#primary {
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #primary#primary {
 		min-width: 70vw;
 	}
 
-	ytd-watch-grid[theater] ytd-watch-next-secondary-results-renderer,
-	ytd-watch-grid[theater] #secondary#secondary #secondary-inner > #related {
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] ytd-watch-next-secondary-results-renderer,
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #secondary#secondary #secondary-inner > #related {
 		display: none;
 	}
 
-	ytd-watch-grid[theater] #columns {
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #columns {
 		flex-flow: column-reverse;
 		align-items: center;
 	}
 
-	ytd-watch-grid[theater] #secondary#secondary {
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #secondary#secondary {
 		padding: 0;
 		width: 90%;
-		max-width: var(--ytd-watch-grid-max-player-width);
+		max-width: var(--ytd-watch-flexy-max-player-width);
 		--yt-spec-brand-background-solid: transparent;
 
 		#secondary-inner {
@@ -144,7 +144,9 @@
 	}
 
 	ytd-watch-grid[theater]
-		#player-full-bleed-container#player-full-bleed-container#player-full-bleed-container {
+		#player-full-bleed-container#player-full-bleed-container#player-full-bleed-container,
+	ytd-watch-flexy[theater]
+		#full-bleed-container#full-bleed-container#full-bleed-container {
 		position: fixed;
 		max-height: calc(100vh - 60px);
 
@@ -153,7 +155,7 @@
 		}
 	}
 
-	ytd-watch-grid[theater] #columns#columns {
+	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #columns#columns {
 		background-color: rgba(0, 0, 0, 0.7);
 		width: 100%;
 		max-width: none;
@@ -163,7 +165,7 @@
 
 	}
 
-	html:fullscreen ytd-watch-grid[theater] #columns#columns {
+	html:fullscreen :is(ytd-watch-grid, ytd-watch-flexy)[theater] #columns#columns {
 		top: 100vh;
 	}
 
