@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/youtube
 @description  Custom theme to use YouTube anonymously
 @author       Xnuk Shuman
-@version      2024.03.02
+@version      2024.03.20
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -110,27 +110,28 @@
 		display: none !important;
 	}
 
-	ytd-watch-flexy[theater] #primary#primary {
+	ytd-watch-grid[theater] #primary#primary {
 		min-width: 70vw;
 	}
 
-	ytd-watch-flexy[theater] ytd-watch-next-secondary-results-renderer,
-	ytd-watch-flexy[theater] #secondary#secondary #secondary-inner > #related {
+	ytd-watch-grid[theater] ytd-watch-next-secondary-results-renderer,
+	ytd-watch-grid[theater] #secondary#secondary #secondary-inner > #related {
 		display: none;
 	}
 
-	ytd-watch-flexy[theater] #columns {
+	ytd-watch-grid[theater] #columns {
 		flex-flow: column-reverse;
 		align-items: center;
 	}
 
-	ytd-watch-flexy[theater] #secondary#secondary {
+	ytd-watch-grid[theater] #secondary#secondary {
 		padding: 0;
 		width: 90%;
-		max-width: var(--ytd-watch-flexy-max-player-width);
+		max-width: var(--ytd-watch-grid-max-player-width);
 		--yt-spec-brand-background-solid: transparent;
 
 		#secondary-inner {
+			position: static;
 			transition: opacity 0.2s;
 			&:not(:hover) {
 				opacity: 0.6;
@@ -142,8 +143,8 @@
 		margin-top: 0;
 	}
 
-	ytd-watch-flexy[theater]
-		#full-bleed-container#full-bleed-container#full-bleed-container {
+	ytd-watch-grid[theater]
+		#player-full-bleed-container#player-full-bleed-container#player-full-bleed-container {
 		position: fixed;
 		max-height: calc(100vh - 60px);
 
@@ -152,15 +153,17 @@
 		}
 	}
 
-	ytd-watch-flexy[theater] #columns#columns {
+	ytd-watch-grid[theater] #columns#columns {
 		background-color: rgba(0, 0, 0, 0.7);
 		width: 100%;
 		max-width: none;
 		position: absolute;
 		top: max(480px, min(calc((9 / 16) * 100vw), calc(100vh - 60px)));
+
+
 	}
 
-	html:fullscreen ytd-watch-flexy[theater] #columns#columns {
+	html:fullscreen ytd-watch-grid[theater] #columns#columns {
 		top: 100vh;
 	}
 
