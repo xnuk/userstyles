@@ -1,31 +1,45 @@
 // ==UserScript==
-// @name     GitHub -> Sourcegraph
-// @version  1
-// @grant    none
-// @match    https://github.com/*/*
-// @run-at   document-end
+// @name GitHub -> Sourcegraph
+// @version 1
+// @grant none
+// @match https://github.com/*
+// @run-at document-end
+// @updateURL https://raw.githubusercontent.com/xnuk/firefox-ext/userscripts/github-to-sourcegraph.user.js
 // ==/UserScript==
 
-const loc = () => {
-	const path = /^(?:\/[^\/]+){2}/.exec(window.location.pathname)?.[0]
-	if (path == null) return null
-	return `https://sourcegraph.com/github.com${path}`
-}
-
 const anchor = document.createElement('a')
-anchor.href = loc()
 anchor.textContent = 'Search in Sourcegraph'
 anchor.className =
 	'Button Button--secondary Button--medium AppHeader-button color-fg-muted'
 
-const changer = () => {
-	const div = document.getElementsByClassName('AppHeader-search')[0]
-	if (div != null) {
-		div.replaceWith(anchor)
+let pathBefore = null
+
+const update = () => {
+	const path = /^(?:\/[^\/]+){2}/.exec(window.location.pathname)?.[0]
+	if (path === pathBefore) return
+	pathBefore = path
+
+	if (path == null) {
+		anchor.href = 'https://sourcegraph.com/search'
+	} else {
+		anchor.href = `https://sourcegraph.com/github.com${path}`
 	}
-	anchor.href = loc()
+}
+
+const changer = () => {
+	if (!anchor.isConnected) {
+		const poorSearchButton =
+			document.getElementsByClassName('AppHeader-search')[0]
+
+		if (poorSearchButton != null) {
+			poorSearchButton.replaceWith(anchor)
+		}
+	}
+
+	update()
 }
 
 const observer = new MutationObserver(changer)
-observer.observe(document.body, { childList: true })
+// [aria-busy], [class], [data-turbo-loaded]
+observer.observe(document.documentElement, { attributes: true })
 changer()
