@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2024-01-29T16:01:11.354Z",
+    "createdAt": "2024-04-09T22:01:06.364Z",
     "redirects": [
         {
             "description": "Fast youtube",
@@ -124,12 +124,12 @@
         {
             "description": "hada.io",
             "exampleUrl": "https://news.hada.io/topic?id=4195&utm_source=twitter",
-            "exampleResult": "https://news-hada.xnuk.workers.dev/4195",
+            "exampleResult": "https://xnu.kr/news-hada/4195",
             "error": null,
             "includePattern": "^https://news.hada.io/topic\\?id=([0-9]+).*",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://news-hada.xnuk.workers.dev/$1",
+            "redirectUrl": "https://xnu.kr/news-hada/$1",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
