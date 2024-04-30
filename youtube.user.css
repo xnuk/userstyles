@@ -112,6 +112,7 @@
 
 	:is(ytd-watch-grid, ytd-watch-flexy)[theater] #primary#primary {
 		min-width: 70vw;
+		max-width: 95vw;
 	}
 
 	:is(ytd-watch-grid, ytd-watch-flexy)[theater] ytd-watch-next-secondary-results-renderer,
