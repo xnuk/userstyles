@@ -24,7 +24,7 @@
 		display: none;
 	}
 
-	a[href='/i/verified-choose'] {
+	a[href='/i/verified-choose'], a[href='/i/premium_sign_up'] {
 		display: none;
 	}
 
