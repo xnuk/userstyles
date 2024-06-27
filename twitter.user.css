@@ -3,7 +3,7 @@
 @namespace    userstyles.xnu.kr/twitter
 @description  Custom fix for twitter
 @author       Xnuk Shuman
-@version      2024.05.17
+@version      2024.06.28
 @preprocessor default
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
@@ -26,6 +26,7 @@
 
 	a[href='/i/verified-choose'],
 	a[href='/i/premium_sign_up'],
+	a[href='/i/verified-orgs-signup'],
 	a[href='/i/grok'] {
 		display: none;
 	}
