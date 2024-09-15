@@ -198,6 +198,7 @@
 				'right: 0',
 				'position: absolute',
 				'background: rgba(255,255,255,.6)',
+				'z-index: 5',
 			].join(';'),
 		)
 		editor.appendChild(input)
