@@ -6,6 +6,8 @@
 // @run-at   document-end
 // @match    https://acmicpc.net/submit/*
 // @match    https://www.acmicpc.net/submit/*
+// @match    https://acmicpc.net/contest/submit/*
+// @match    https://www.acmicpc.net/contest/submit/*
 // @updateURL https://raw.githubusercontent.com/xnuk/firefox-ext/userscripts/baekjoon_uploader.user.js
 // ==/UserScript==
 
